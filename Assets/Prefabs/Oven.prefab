@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3478601760306448695
+--- !u!1 &4538807245171014879
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1153907259748781860}
-  - component: {fileID: 151167806610193364}
+  - component: {fileID: 1525417093807483197}
+  - component: {fileID: 2032901867674670055}
   m_Layer: 0
-  m_Name: wall
+  m_Name: Oven
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1153907259748781860
+--- !u!4 &1525417093807483197
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3478601760306448695}
+  m_GameObject: {fileID: 4538807245171014879}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.09, y: -0.9816, z: 0}
-  m_LocalScale: {x: 1, y: 0.7509216, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071065, w: -0.7071072}
+  m_LocalPosition: {x: 2.93, y: -3.31, z: 0}
+  m_LocalScale: {x: 0.3625, y: 0.3625, z: 0.3625}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &151167806610193364
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -270}
+--- !u!212 &2032901867674670055
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3478601760306448695}
+  m_GameObject: {fileID: 4538807245171014879}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3b1fbc144b1356b4da5bcce16307253e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8510217711dd7f94aab970489051d6f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.37, y: 9.42}
+  m_Size: {x: 7.46, y: 4.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
