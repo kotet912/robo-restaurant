@@ -1787,6 +1787,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 519420032}
     m_Modifications:
+    - target: {fileID: 463699313640152735, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
+      propertyPath: m_Name
+      value: chair (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539826850001286315, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
+      propertyPath: m_Name
+      value: chair (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2321666709285568993, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.123223916
@@ -1823,6 +1831,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -2024110101
       objectReference: {fileID: 0}
+    - target: {fileID: 3240715595034686968, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
+      propertyPath: m_Name
+      value: chair (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3602026466640101935, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15676223
@@ -1842,6 +1854,10 @@ PrefabInstance:
     - target: {fileID: 3602026466640101935, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.6091999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4986159204875217455, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
+      propertyPath: m_Name
+      value: table
       objectReference: {fileID: 0}
     - target: {fileID: 5203063097890555790, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1902,6 +1918,10 @@ PrefabInstance:
     - target: {fileID: 6028939009523577623, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.0741999
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423796613057877397, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
+      propertyPath: m_Name
+      value: chair
       objectReference: {fileID: 0}
     - target: {fileID: 6816009532565504037, guid: 8e3959a63fdb0f145b4f8c76953295bb, type: 3}
       propertyPath: m_SortingLayer
