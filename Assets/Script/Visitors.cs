@@ -7,14 +7,15 @@ public class Visitors : MonoBehaviour
     [SerializeField] private float _speedVisitor; // Скорость посетителя
     [SerializeField] private int _minOrders; // Минимальное количество заказов
     [SerializeField] private int _maxOrders; // Максимальное количество заказов
-    [SerializeField] private Transform _tableTransform; // Трансформ стола
+    [SerializeField] private Transform[] _chairTransforms; // Массив трансформов стульев
     [SerializeField] private Color _orderColor = Color.red; // Цвет для обозначения наличия заказа
     [SerializeField] private Color _defaultColor = Color.white; // Цвет по умолчанию
 
     private int _ordersNumberVisitor; // Количество заказов у посетителя
     private Vector3 _targetPosition;
-    private bool _hasReachedTable = false; // Булева переменная для отслеживания достижения стола
+    private bool _hasReachedChair = false; // Булева переменная для отслеживания достижения стула
     private SpriteRenderer _spriteRenderer; // Ссылка на компонент SpriteRenderer
+    private Transform _targetChair; // Ссылка на целевой стул
 
     void Start()
     {
@@ -24,14 +25,15 @@ public class Visitors : MonoBehaviour
         // Получаем компонент SpriteRenderer
         _spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Проверка и установка цели
-        if (_tableTransform != null)
+        // Найти свободный стул
+        _targetChair = FindRandomFreeChair();
+        if (_targetChair != null)
         {
-            _targetPosition = _tableTransform.position;
+            _targetPosition = _targetChair.position;
         }
         else
         {
-            Debug.LogError("Table Transform is not assigned in the inspector.");
+            Debug.LogError("No free chair found.");
         }
 
         // Устанавливаем цвет в зависимости от наличия заказа
@@ -40,27 +42,26 @@ public class Visitors : MonoBehaviour
 
     void Update()
     {
-        // Двигаем посетителя в сторону стола, если он еще не достиг его
-        if (!_hasReachedTable)
+        // Двигаем посетителя в сторону стула, если он еще не достиг его
+        if (!_hasReachedChair && _targetChair != null)
         {
-            MoveTowardsTable();
+            MoveTowardsChair();
         }
     }
 
-    private void MoveTowardsTable()
+    private void MoveTowardsChair()
     {
-        if (_tableTransform != null)
-        {
-            // Рассчитываем направление и перемещаем объект
-            Vector3 direction = (_targetPosition - transform.position).normalized;
-            transform.position += direction * _speedVisitor * Time.deltaTime;
+        // Рассчитываем направление и перемещаем объект
+        Vector3 direction = (_targetPosition - transform.position).normalized;
+        transform.position += direction * _speedVisitor * Time.deltaTime;
 
-            // Проверяем, достиг ли объект стола
-            if (Vector3.Distance(transform.position, _targetPosition) < 0.5f)
-            {
-                Debug.Log("Visitor has reached the table.");
-                _hasReachedTable = true; // Устанавливаем флаг, что посетитель достиг стола
-            }
+        // Проверяем, достиг ли объект стула
+        if (Vector3.Distance(transform.position, _targetPosition) < 0.1f)
+        {
+            Debug.Log("Visitor has reached the chair.");
+            _hasReachedChair = true; // Устанавливаем флаг, что посетитель достиг стула
+
+            // логика заказа
         }
     }
 
@@ -75,5 +76,29 @@ public class Visitors : MonoBehaviour
         {
             _spriteRenderer.color = _defaultColor;
         }
+    }
+
+    private Transform FindRandomFreeChair()
+    {
+        List<Transform> freeChairs = new List<Transform>();
+
+        // Собираем все свободные стулья
+        foreach (Transform chair in _chairTransforms)
+        {
+            // Допустим, у вас есть метод или свойство, которое проверяет, занят ли стул
+            Chair chairComponent = chair.GetComponent<Chair>();
+            if (chairComponent != null && chairComponent.IsFree)
+            {
+                freeChairs.Add(chair);
+            }
+        }
+
+        if (freeChairs.Count > 0)
+        {
+            // Возвращаем случайный свободный стул
+            return freeChairs[Random.Range(0, freeChairs.Count)];
+        }
+
+        return null;
     }
 }
